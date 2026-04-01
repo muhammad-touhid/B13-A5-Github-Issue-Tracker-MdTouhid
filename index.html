@@ -20,18 +20,20 @@
   </head>
   <body class="geist-font w-full h-screen bg-[#F8FAFC] flex items-center">
     <div
-      class="sign-in-container w-[520px] m-auto bg-white p-8 rounded-lg shadow-lg"
+      class="sign-in-container md:w-[520px] m-auto bg-white p-8 rounded-lg shadow-lg"
     >
       <div class="sign-in-header text-center">
         <img
-          class="w-[100px] h-[100px] m-auto"
+          class="w-[50px] md:w-[100px] h-[50px] md:h-[100px] m-auto"
           src="./assets/github-logo.png"
           alt=""
         />
-        <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+        <h2 class="text-xl md:text-2xl font-semibold mt-4">
+          GitHub Issues Tracker
+        </h2>
         <p class="text-base text-gray-500">Sign in to manage your issues</p>
       </div>
-      <fieldset class="fieldset w-full mt-8">
+      <fieldset class="fieldset w-full mt-4 md:mt-8">
         <label class="label color-font text-base font-semibold">Username</label>
         <input
           id="input-username"
