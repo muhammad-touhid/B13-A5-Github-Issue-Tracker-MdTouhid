@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="geist-font">
+    <main class="w-[1600px] m-auto bg-[#F8FAFC]">
+      <div class="navbar bg-base-100 shadow-sm py-4">
+        <div class="w-[90%] flex justify-between m-auto">
+          <div class="flex gap-2 items-center">
+            <img src="./assets/github-logo.png" alt="GitHub" class="w-10" /><a
+              href="#"
+              class="text-xl font-bold"
+              >GitHub Issues Tracker</a
+            >
+          </div>
+          <div class="flex gap-2">
+            <div>
+              <label class="input">
+                <svg
+                  class="h-[1.5em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input
+                  id="search-input"
+                  type="search"
+                  class="text-lg"
+                  required
+                  placeholder="Search Issues"
+                />
+              </label>
+            </div>
+            <button id="search-btn" class="btn btn-primary join-item">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-[1110px] mt-14 m-auto">
+        <section class="tab-section p-6 bg-white rounded-lg shadow-sm">
+          <div class="tabs flex gap-2">
+            <button
+              id="all-tab-btn"
+              class="tab-btn btn btn-active btn-primary px-10! text-s"
+            >
+              All
+            </button>
+            <button id="open-tab-btn" class="tab-btn btn base-100 text-s px-8">
+              Open
+            </button>
+            <button
+              id="closed-tab-btn"
+              class="tab-btn btn base-100 text-s px-8"
+            >
+              Closed
+            </button>
+          </div>
+        </section>
+        <section class="card-section rounded-lg mt-4">
+          <div
+            class="card-header bg-white p-6 flex justify-between shadow-sm border-b-3 border-gray-200"
+          >
+            <div class="card-header-left flex gap-2 items-center">
+              <div class="bg-[#ECE4FF] p-2 rounded-full">
+                <img src="./assets/Aperture.png" alt="" />
+              </div>
+              <div>
+                <h2 id="issue-card-count" class="text-2xl font-semibold">
+                  50 Issues
+                </h2>
+                <p class="text-gray-500">
+                  Track and manage your project issues
+                </p>
+              </div>
+            </div>
+            <div class="card-header-right flex items-center gap-4">
+              <p class="font-semibold">
+                <img
+                  class="inline-block mr-2"
+                  src="./assets/open dot.png"
+                  alt=""
+                  srcset=""
+                />Open
+              </p>
+              <p class="font-semibold">
+                <img
+                  class="inline-block mr-2"
+                  src="./assets/close dot.png"
+                  alt=""
+                  srcset=""
+                />Closed
+              </p>
+            </div>
+          </div>
+          <div
+            id="spinner"
+            class="flex justify-center items-center p-10 hidden"
+          >
+            <span class="loading loading-spinner loading-xl"></span>
+          </div>
+          <div
+            id="issues-container"
+            class="issues-container p-6 grid grid-cols-4 gap-3 space-y-4 bg-[#FBFBFB] shadow-sm"
+          ></div>
+        </section>
+
+        <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div id="modal-details-container"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-primary">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </main>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>

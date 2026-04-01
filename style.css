@@ -1,0 +1,17 @@
+.geist-font {
+  font-family: "Geist", sans-serif;
+}
+
+.color-font {
+  color: #1f2937 !important;
+}
+
+.tabs .btn {
+  background-color: #fff;
+  color: #64748b;
+}
+
+.tabs .btn-primary {
+  background-color: #4a00ff;
+  color: #fff;
+}
