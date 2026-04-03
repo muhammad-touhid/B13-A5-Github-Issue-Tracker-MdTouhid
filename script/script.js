@@ -116,11 +116,18 @@ const displayIssueDetail = (issue) => {
               <div class="flex my-3 gap-2">
                 <div class="badge ${modalStatusColor} text-white rounded-full p-3">
                   ${issue.status}
+                  </div>
+                <div class=" flex gap-3 flex-col sm:flex-row">
+                    
+                    <div class="flex gap-1">
+                        <span class="text-gray-400">•</span>
+                        <p class="text-gray-400">Opened by ${issue.author}</p>
+                    </div>
+                    <div class="flex gap-1">
+                        <span class="text-gray-400">•</span>
+                        <p class="text-gray-400">${issue.createdAt}</p>
+                    </div>
                 </div>
-                <span class="text-gray-400">•</span>
-                <p class="text-gray-400">Opened by ${issue.author}</p>
-                <span class="text-gray-400">•</span>
-                <p class="text-gray-400">${issue.createdAt}</p>
               </div>
               <div class="labels flex gap-2 flex-wrap my-6">
                 ${modalLablesElement}
@@ -132,7 +139,7 @@ const displayIssueDetail = (issue) => {
               <div class="p-4 rounded-lg bg-gray-50 flex my-6">
                 <div class="w-[50%]">
                   <p class="text-gray-400">Assignee:</p>
-                  <h4 class="font-bold">${issue.assignee}</h4>
+                  <h4 class="font-bold">${issue.assignee ? issue.assignee : "Not available"}</h4>
                 </div>
                 <div class="w-[50%]">
                   <p class="text-gray-400">Priority:</p>
