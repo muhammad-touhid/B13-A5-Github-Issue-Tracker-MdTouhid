@@ -167,11 +167,14 @@ function displayIssues(issues) {
     }
 
     let statusColor = "";
+    let letStatusBtn = "";
 
     if (issue.status === "open") {
       statusColor = "border-[#00A96E]";
+      letStatusBtn = "Open-Status";
     } else {
       statusColor = "border-[#A855F7]";
+      letStatusBtn = "Closed-Status";
     }
 
     const issueCard = document.createElement("div");
@@ -202,7 +205,7 @@ function displayIssues(issues) {
             >
               <div class="isseu-card-top p-4 border-b-2 border-gray-200">
                 <div class="flex justify-between items-center">
-                  <img src="./assets/Open-Status.png" alt="" />
+                  <img src="./assets/${letStatusBtn}.png" alt="" />
                   <div class="badge badge-soft ${priorityClass}">${issue.priority}</div>
                 </div>
                 <h2 class="mt-3 text-xl font-semibold">
